@@ -13,34 +13,63 @@
 <h4>ゲームの流れ</h4>
 <div>
     <ol>
-        <li>コンピュータが好きな数を質問する</li>
-    </ol>
-                
-                        いいいいいい                    
+        <li>コンピュータが1から50の中で自由に数字を決める</li><br>
+        <li>回答者が数字を予想して答える</li><br>
+        <li>コンピュータが「もっと大きい数字です」か「もっと小さい数字です」の２つで答える</li><br>
+        <li>回答者はこの２つの言葉を頼りに予想された数字を見つける</li><br>
+        <li>3と４を繰り返す</li><br>
+        <li>数字を当てると「おめでとうございます！⚪︎回目で当たりました！」という文字が出て終わる</li>
+    </ol>                 
                     </div>
-                      
+<div><h4>ソースコード</h4>
+<pre style="background:#FAFAF9;color:#3f3f46;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:1.7;padding:16px 18px;margin:0;border-radius:4px;overflow-x:auto;white-space:pre;tab-size:4;-moz-tab-size:4;"><code style="font-family:inherit;background:none;padding:0;"><span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">1</span><span style="color:#0f766e;">import</span> random
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">2</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">3</span><span style="color:#0f766e;">def</span> <span style="color:#4338ca;">guess_the_number</span><span style="color:#a1a1aa;">(</span><span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">4</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"数当てゲームへようこそ！"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">5</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"1から50までの数を当ててください"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">6</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">7</span>    number_to_guess <span style="color:#71717a;">=</span> random<span style="color:#a1a1aa;">.</span>randint<span style="color:#a1a1aa;">(</span><span style="color:#a16207;">1</span><span style="color:#a1a1aa;">,</span><span style="color:#a16207;">50</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">8</span>    number_of_guesses <span style="color:#71717a;">=</span> <span style="color:#a16207;">0</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">9</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">10</span>    <span style="color:#0f766e;">while</span> <span style="color:#a16207;">True</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">11</span>        guess <span style="color:#71717a;">=</span> <span style="color:#0f766e;">input</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"あなたの予想を入力してください"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">12</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">13</span>        <span style="color:#0f766e;">try</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">14</span>             guess <span style="color:#71717a;">=</span> <span style="color:#0f766e;">int</span><span style="color:#a1a1aa;">(</span>guess<span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">15</span>        <span style="color:#0f766e;">except</span> ValueError<span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">16</span>              <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"無効な入力です。数値を入力してください"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">17</span>              <span style="color:#0f766e;">continue</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">18</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">19</span>        number_of_guesses <span style="color:#71717a;">+=</span> <span style="color:#a16207;">1</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">20</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">21</span>        <span style="color:#0f766e;">if</span> guess <span style="color:#71717a;">&lt;</span> number_to_guess<span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">22</span>              <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"もっと大きい数字です"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">23</span>        <span style="color:#0f766e;">elif</span> guess <span style="color:#71717a;">&gt;</span> number_to_guess<span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">24</span>                <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"もっと小さい数です"</span><span style="color:#a1a1aa;">)</span>          
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">25</span>        <span style="color:#0f766e;">else</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">26</span>                <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span><span style="color:#7B2CBF;">f"おめでとうございます！</span><span><span style="color:#a1a1aa;">{</span>number_of_guesses<span style="color:#a1a1aa;">}</span></span><span style="color:#7B2CBF;">回目で当たりました！"</span></span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">27</span>                <span style="color:#0f766e;">break</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">28</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">29</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">30</span>guess_the_number<span style="color:#a1a1aa;">(</span><span style="color:#a1a1aa;">)</span></code></pre>
+</div>
          <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
-画像を表示(30%)<br>
-<img src="./images/IMG_5052.JPG"width="30%"><br>
+<div><h4>作ってみて</h4><br>
+今回pythonを使ってゲームを制作してみて、とても難しいと感じました。<br>
+今まで習ったことのないことだったので事前知識もあまりなく、この簡単なゲームを作るだけでもとても大変でした。<br>
+ソースコードを書いていく中で、段落分けに特に苦労しました。<br>
+少しでも間違えているとうまく実行されなかったり、下のコードは合っているのに上の段落が１つ違うだけで実行されなかったりと実際ソースコードを書くより見直しの時間が1番長かったです。<br>
 
-         <!-- ③↓に箇条書きをしてみよう -->
-<ol>
-                        <li>ああああああ</li>
-                        <li>いいいいいい</li>
-                    </ol>
-                    <ul>
-                        <li>あああああ</li>
-                        <li>いいいいいいい</li>
-                    </ul>
+</div>
+
+         <!-- ③↓に箇条書きをしてみよう --
                 
 
          <!-- ④↓に外部リンクを作ってみよう -->
- <a href="index.html">デザイン演習Ⅰ・Ⅱトップページ</a><br>
-    </div>
+<a href="index.html">デザイン演習Ⅰ・Ⅱトップページ</a><br>
+
 <a href="../index.html">XBPトップページ</a><br>
-<a href="https://www.yahoo.co.jp/" target="_blank">Yahoo</a><br>
-<a href="files/test.pdf" target="_blank">pdfファイル</a><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H8BEhVmxc4U?si=IuiBD_m2syYid97w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 
 </body>
